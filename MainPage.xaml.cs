@@ -22,9 +22,60 @@ namespace ConvertIt
     /// </summary>
     public sealed partial class MainPage : Page
     {
+
+        // initialize public variables that need to be shared with muiltiple methods in this class
+        public bool Balthazar;
+        public bool Professor;
+
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private void btnSubmitClick(object sender, RoutedEventArgs e)
+        {
+
+            DateTime ProfessorProtonBD;
+            DateTime BalthazarBD;
+            DateTime userDate;
+            var result = 0;
+
+            if (Balthazar) 
+            {
+                BalthazarBD = Convert.ToDateTime("2017-11-27");
+
+                userDate = dtePicker.Date.DateTime;
+
+                result = (userDate - BalthazarBD).Days;
+
+                // Display result
+                txtResults.Text = "The answer is: " + result;
+
+
+            }
+            if (Professor)
+            {
+                ProfessorProtonBD = Convert.ToDateTime("2018-12-10");
+
+                userDate = dtePicker.Date.DateTime;
+
+                result = (userDate - ProfessorProtonBD).Days;
+
+                // Display result
+                txtResults.Text = "The answer is: " + result;
+            }
+        }
+
+        private void BalthazarChecked(object sender, RoutedEventArgs e)
+        {
+            Balthazar = true;
+            
+        }
+
+        private void ProfessorChecked(object sender, RoutedEventArgs e)
+        {
+            Professor = true;
+
         }
     }
 }

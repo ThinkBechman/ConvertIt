@@ -8,5 +8,24 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid x:Name="mainGrid" Background="#FF2045A6"/>
+    <Grid x:Name="mainGrid" Background="#FF2045A6">
+        <Grid x:Name="dateGrid" HorizontalAlignment="Left" Height="387" Margin="100,185,0,0" VerticalAlignment="Top" Width="392">
+            <DatePicker x:Name="dtePicker" Margin="44,233,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.844" FontSize="20" FontFamily="Microsoft YaHei UI" AutomationProperties.Name="Birthday Caleendar" Orientation="Horizontal"/>
+            <TextBlock x:Name="lblDaysUntil" HorizontalAlignment="Left" Margin="26,31,0,0" Text="How many days until ..." TextWrapping="Wrap" VerticalAlignment="Top" Height="39" Width="318" FontSize="27" FontFamily="Century Gothic" FontWeight="Bold"/>
+            <TextBlock x:Name="lblDateIs" HorizontalAlignment="Left" Margin="69,177,0,0" Text="when the date is:" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" Width="236" FontFamily="Century Gothic" FontSize="27" FontWeight="Bold"/>
+            <RadioButton x:Name="rbtnBalthazar" Content="Balthazar's Birthday" Margin="80,85,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.672,0.611" Height="43" GroupName="Doggy Birthdays" FontFamily="Calisto MT" FontSize="20" IsChecked="True" Checked="BalthazarChecked"/>
+            <RadioButton x:Name="rbtnProfessor" Content="Professor Proton's Birthday" Margin="80,129,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.672,0.611" Height="43" GroupName="Doggy Birthdays" FontFamily="Calisto MT" FontSize="20" Checked="ProfessorChecked"/>
+            <Border x:Name="borderBirthday" BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="311" Margin="10,0,0,0" VerticalAlignment="Top" Width="354"/>
+        </Grid>
+        <Grid x:Name="titleGrid" HorizontalAlignment="Left" Height="140" Margin="76,45,0,0" VerticalAlignment="Top" Width="597">
+            <TextBlock HorizontalAlignment="Center" Margin="0,22,0,0" Text="Convert or Calculate It" TextWrapping="Wrap" VerticalAlignment="Top" Height="93" Width="519" FontSize="50" FontFamily="KacstBook"/>
+        </Grid>
+        <Grid x:Name="bottomGrid" Margin="0,577,0,0">
+            <Button x:Name="btnSubmit" Content="SUBMIT" Margin="186,10,0,0" VerticalAlignment="Top" Width="213" Height="62" FontSize="20" Background="#FFD0CDDB" Click="btnSubmitClick"/>
+        </Grid>
+        <Grid x:Name="gridResults" HorizontalAlignment="Left" Height="415" Margin="854,0,0,0" VerticalAlignment="Center" Width="370" Background="#FFAED5E0">
+            <TextBlock x:Name="lblResults" HorizontalAlignment="Center" Margin="0,48,0,0" Text="The Results are in..." TextWrapping="Wrap" VerticalAlignment="Top" Height="38" Width="270" FontSize="27" FontFamily="Rubik" FontWeight="Bold"/>
+            <TextBlock x:Name="txtResults" HorizontalAlignment="Center" Margin="0,112,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="299" Width="350" FontSize="20" FontFamily="Verdana"/>
+        </Grid>
+    </Grid>
 </Page>
